@@ -1,0 +1,26 @@
+machine:
+  xcode:
+    version: "8.0"
+
+  environment:
+    XCODE_SCHEME: Simple
+
+dependencies:
+  pre:
+    - sh ./install_dependencies.sh
+
+
+  cache_directories:
+    - /usr/local/lib/ruby/gems/2.3.0/gems/cocoapods-core-1.1.1
+    - /usr/local/lib/ruby/gems/2.3.0/gems/cocoapods-1.1.1
+    - /usr/local/lib/ruby/gems/2.3.0/gems/cocoapods-downloader-1.1.2
+
+# test:
+#   override:
+#     - echo "test"
+
+deployment:
+  prototype:
+    branch: master
+    commands:
+      - sh ./deployment.sh
